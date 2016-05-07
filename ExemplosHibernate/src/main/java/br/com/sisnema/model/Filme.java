@@ -1,12 +1,26 @@
 package br.com.sisnema.model;
 
-import com.mysql.fabric.xmlrpc.base.Data;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 public class Filme {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "cod_filme")
 	private Integer codigo;
+	
 	private Categoria categoria;
+	
+	@Column(nullable = false)
 	private String descricao;
-	private Data ano;
+	
+	@Column(nullable = false)
+	private Date ano;
 
 	public Integer getCodigo() {
 		return codigo;
@@ -32,11 +46,11 @@ public class Filme {
 		this.descricao = descricao;
 	}
 
-	public Data getAno() {
+	public Date getAno() {
 		return ano;
 	}
 
-	public void setAno(Data ano) {
+	public void setAno(Date ano) {
 		this.ano = ano;
 	}
 
@@ -114,5 +128,4 @@ public class Filme {
 		}
 		return true;
 	}
-
 }
