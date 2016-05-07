@@ -1,8 +1,25 @@
 package br.com.sisnema.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Midia {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "cod_midia")
 	private Integer codigo;
+	
+	@ManyToOne
+	@JoinColumn(name="cod_filme", nullable=false)
 	private Filme filme;
+	
 	private boolean inutilizada;
 
 	/**

@@ -3,10 +3,16 @@ package br.com.sisnema.model;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+@Entity
 public class Filme {
 	
 	@Id
@@ -14,12 +20,14 @@ public class Filme {
 	@Column(name = "cod_filme")
 	private Integer codigo;
 	
+	@ManyToOne
+	@JoinColumn(name="cod_categoria", nullable=false)
 	private Categoria categoria;
 	
 	@Column(nullable = false)
 	private String descricao;
 	
-	@Column(nullable = false)
+	@Temporal(TemporalType.DATE)
 	private Date ano;
 
 	public Integer getCodigo() {

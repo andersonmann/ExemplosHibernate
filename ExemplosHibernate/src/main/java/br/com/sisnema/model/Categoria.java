@@ -23,6 +23,20 @@ public class Categoria {
 	@Column(nullable = false)
 	private String descricao;
 
+	public Categoria() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	/**
+	 * @param descricao
+	 */
+	public Categoria(String descricao) {
+		super();
+		this.descricao = descricao;
+	}
+
+
 	/**
 	 * @return the codigo
 	 */
