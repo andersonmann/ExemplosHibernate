@@ -1,5 +1,7 @@
 package br.com.sisnema.model;
 
+//
+
 public class Categoria {
 	private Integer categoria;
 	private String descricao;
